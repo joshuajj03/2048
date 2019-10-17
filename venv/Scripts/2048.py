@@ -223,7 +223,7 @@ def slide(direct):
                         else:
                             boardCopy[x][y - 1].changeValue(board[x][y].tileValue + board[x][y - 1].tileValue)
                             boardCopy[x][y-1].hasMerged =True
-                            points += board[x][y].tileValue
+                            points += 2*board[x][y].tileValue
                         if (y < 3 and not board[x][y+1].isMoving) or (y==3):
                             boardCopy[x][y].changeValue(0)
                     elif(direct == DOWN and board[x][y].isMoving):
@@ -232,7 +232,7 @@ def slide(direct):
                         else:
                             boardCopy[x][y + 1].changeValue(board[x][y].tileValue + board[x][y + 1].tileValue)
                             boardCopy[x][y+1].hasMerged =True
-                            points += board[x][y].tileValue
+                            points += 2*board[x][y].tileValue
                         if (y >0 and not board[x][y-1].isMoving) or (y==0):
                             boardCopy[x][y].changeValue(0)
                     elif(direct == LEFT and board[x][y].isMoving):
@@ -241,7 +241,7 @@ def slide(direct):
                         else:
                             boardCopy[x-1][y].changeValue(board[x][y].tileValue + board[x-1][y].tileValue)
                             boardCopy[x-1][y].hasMerged =True
-                            points += board[x][y].tileValue
+                            points += 2*board[x][y].tileValue
                         if (x < 3 and not board[x + 1][y].isMoving) or (x==3):
                             boardCopy[x][y].changeValue(0)
 
@@ -252,7 +252,7 @@ def slide(direct):
                         else:
                             boardCopy[x+1][y].changeValue(board[x][y].tileValue + board[x+1][y].tileValue)
                             boardCopy[x+1][y].hasMerged =True
-                            points += board[x][y].tileValue
+                            points += 2*board[x][y].tileValue
                         if(x>0 and not board[x-1][y].isMoving) or (x==0):
                             boardCopy[x][y].changeValue(0)
 
